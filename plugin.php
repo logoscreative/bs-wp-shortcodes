@@ -37,7 +37,7 @@ function bs_collapse_func($atts, $content = null) {
     );
 
     $idnum = rand(1,500);
-    $open === true ? $open = ' in' : $open = '';
+    $open == true ? $open = ' in' : $open = '';
     $plusicon == true ? $plusicon = ' +' : $plusicon = '';
 
     $collapse_content = "<" . $element . "><a data-toggle='collapse' data-target='#coll" . $idnum . "' class='pointer'>" . $title . $plusicon . "</a></" . $element . "><div id='coll" . $idnum . "' class='collapse" . $open . "'>" . do_shortcode($content) . "</div>";
