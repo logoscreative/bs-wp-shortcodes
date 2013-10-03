@@ -1,6 +1,6 @@
 ## Shortcodes
 
-First of all, your content will *always* work without shortcodes—these are simply present to give you easy ways to access features of Bootstrap without having to make a page template.
+You're going to need to have Bootstrap enqueued already—this plugin doesn't do that. If you need a starter theme with Bootstrap, check out [Archetype](https://github.com/logoscreative/archetype).
 
 The following shows the available arguments/options along with the default setting. These are shown logically 'in type', so items wrapped in quotation marks (or defaulting as null) are strings, and booleans or integers have none.
 
