@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Bootstrap Shortcodes
+Plugin Name: Bootstrap Shortcodes for WordPress
 Plugin URI: http://logoscreative.co
 Description: Add shortcodes allowing common Bootstrap components to be used in the Visual Editor
 Version: 1.0
