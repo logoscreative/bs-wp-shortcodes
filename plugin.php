@@ -28,11 +28,13 @@ class BootstrapShortcodes {
         add_shortcode( 'span', array( $this, 'bs_span_func' ) );
         add_shortcode( 'inner-span', array( $this, 'bs_span_func' ) );
         add_shortcode( 'inner-inner-span', array( $this, 'bs_span_func' ) );
-        add_shortcode( 'hero', array( $this, 'bs_hero_func' ) );
+        add_shortcode( 'jumbotron', array( $this, 'bs_hero_func' ) );
         add_shortcode( 'well', array( $this, 'bs_well_func' ) );
         add_shortcode( 'icon', array( $this, 'bs_icon_func' ) );
         add_shortcode( 'thumbnails', array( $this, 'bs_thumbnails_func' ) );
         add_shortcode( 'thumbnail', array( $this, 'bs_thumbnail_func' ) );
+        // Deprecated
+        add_shortcode( 'hero', array( $this, 'bs_hero_func' ) );
         // Run this after the shortcodes so we can do stuff
         remove_filter( 'the_content', 'wpautop' );
         add_filter( 'the_content', 'wpautop' , 11 );
@@ -352,11 +354,24 @@ class BootstrapShortcodes {
 
     /* Hero: http://twitter.github.com/bootstrap/components.html#typography */
 
-    /* [hero][/hero] */
+    /* [jumbotron][/jumbotron] */
 
     public function bs_hero_func($atts, $content = null) {
 
-        $hero_content = "<div class='jumbotron'>" . do_shortcode($content) . "</div>";
+        extract(
+            shortcode_atts(
+                array(
+                    'class' => ''
+                ),
+                $atts
+            )
+        );
+
+        if ( $class !== '' ) {
+            $class = " " . $class;
+        }
+
+        $hero_content = "<div class='jumbotron" . $class . "'>" . do_shortcode($content) . "</div>";
 
         return $hero_content;
 

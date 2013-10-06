@@ -45,9 +45,9 @@ General documentation can be found in the [Bootstrap Docs](http://getbootstrap.c
 
 ```[btngroup class=null][/btngroup]```
 
-### Hero ###
+### Jumbotron ###
 
-<code>[hero][/hero]</code>
+<code>[jumbotron][/jumbotron]</code>
 
 ### Well ###
 
