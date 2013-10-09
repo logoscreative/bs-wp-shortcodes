@@ -33,6 +33,7 @@ class BootstrapShortcodes {
         add_shortcode( 'icon', array( $this, 'bs_icon_func' ) );
         add_shortcode( 'thumbnails', array( $this, 'bs_thumbnails_func' ) );
         add_shortcode( 'thumbnail', array( $this, 'bs_thumbnail_func' ) );
+	    add_shortcode( 'container', array( $this, 'bs_container_func' ) );
         // Deprecated
         add_shortcode( 'hero', array( $this, 'bs_hero_func' ) );
         // Run this after the shortcodes so we can do stuff
@@ -471,6 +472,31 @@ class BootstrapShortcodes {
         return $thumbnail_content;
 
     }
+
+	/* Container */
+
+	/* [container][/container] */
+
+	public function bs_container_func($atts, $content = null) {
+
+		extract(
+			shortcode_atts(
+				array(
+					'class' => ''
+				),
+				$atts
+			)
+		);
+
+		if ( $class !== '' ) {
+			$class = " " . $class;
+		}
+
+		$container_content = "<div class='container" . $class . "'>" . do_shortcode($content) . "</div>";
+
+		return $container_content;
+
+	}
 
 }
 
