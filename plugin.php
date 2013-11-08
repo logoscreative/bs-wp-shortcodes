@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap Shortcodes for WordPress
 Plugin URI: http://logoscreative.co
 Description: Add shortcodes allowing common Bootstrap components to be used in the Visual Editor
-Version: 1.0
+Version: 1.0.1
 Author: Cliff Seal
 Author URI: http://logoscreative.co
 Author Email: cliff@logos-creative.com
