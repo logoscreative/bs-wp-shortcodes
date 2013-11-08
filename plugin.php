@@ -142,7 +142,7 @@ class BootstrapShortcodes {
         $tab_content .= "<a href='#" . $this->bs_slug($title) . "' data-toggle='tab'>";
 
         if ( $icon != '' ) {
-            $tab_content .= "<i class='icon-" . $icon . " icon-white icon-2x'></i><br />";
+            $tab_content .= "<i class='fa fa-" . $icon . " fa-white fa-2x'></i><br />";
         }
 
         $tab_content .= do_shortcode($title) . "</a>";
@@ -242,10 +242,10 @@ class BootstrapShortcodes {
             $size = " btn-" . $size;
         }
 
-        $iconwhite == true ? $iconclr = " icon-white" : $iconclr = "";
+        $iconwhite == true ? $iconclr = " fa-white" : $iconclr = "";
 
         if ( $icon != '' ) {
-            $icon = " <i class='icon-" . $icon . $iconclr . "'></i>";
+            $icon = " <i class='fa fa-" . $icon . $iconclr . "'></i>";
         }
 
         if ( $class != '' ) {
@@ -426,7 +426,7 @@ class BootstrapShortcodes {
             $class = " " . $class;
         }
 
-        $icon_content = "<i class='icon-" . $type . $class . "'></i>";
+        $icon_content = "<i class='fa fa-" . $type . $class . "'></i>";
 
         return $icon_content;
 
