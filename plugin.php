@@ -34,6 +34,7 @@ class BootstrapShortcodes {
         add_shortcode( 'thumbnails', array( $this, 'bs_thumbnails_func' ) );
         add_shortcode( 'thumbnail', array( $this, 'bs_thumbnail_func' ) );
 	    add_shortcode( 'container', array( $this, 'bs_container_func' ) );
+	    add_shortcode( 'lead', array( $this, 'bs_lead_func' ) );
         // Deprecated
         add_shortcode( 'hero', array( $this, 'bs_hero_func' ) );
         // Run this after the shortcodes so we can do stuff
@@ -498,6 +499,31 @@ class BootstrapShortcodes {
 
 	}
 
+	/* Lead: http://twitter.github.com/bootstrap/components.html#typography */
+
+    /* [lead][/lead] */
+
+    public function bs_lead_func($atts, $content = null) {
+
+        extract(
+            shortcode_atts(
+                array(
+                    'class' => ''
+                ),
+                $atts
+            )
+        );
+
+        if ( $class !== '' ) {
+            $class = " " . $class;
+        }
+
+        $lead_content = "<div class='lead" . $class . "'>" . do_shortcode($content) . "</div>";
+
+        return $lead_content;
+
+    }
 }
+
 
 $bsshortcodes = New BootstrapShortcodes();
