@@ -11,11 +11,11 @@ General documentation can be found in the [Bootstrap Docs](http://getbootstrap.c
 ```[row class=null rowid=null][/row]```
 ```[inner-row class=null rowid=null][/row]```
 
-### Span ###
+### Col ###
 
-```[span width=12 offset=0 class=null spanid=null][/span]```
-```[inner-span width=12 offset=0 class=null spanid=null][/span]```
-```[inner-inner-span width=12 offset=0 class=null spanid=null][/span]```
+```[col width=12 offset=0 class=null spanid=null][/span]```
+```[inner-col width=12 offset=0 class=null spanid=null][/span]```
+```[inner-inner-col width=12 offset=0 class=null spanid=null][/span]```
 
 ### Collapse ###
 
@@ -56,10 +56,6 @@ General documentation can be found in the [Bootstrap Docs](http://getbootstrap.c
 ### Icon ###
 
 ```[icon type=null class=null]```
-
-### Thumbnails ###
-
-<code>[thumbnails][/thumbnails]<code>
 
 ### Thumbnail ###
 

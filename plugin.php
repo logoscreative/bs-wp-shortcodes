@@ -25,19 +25,22 @@ class BootstrapShortcodes {
         add_shortcode( 'btngroup', array( $this, 'bs_btngrp_func' ) );
         add_shortcode( 'row', array( $this, 'bs_row_func' ) );
         add_shortcode( 'inner-row', array( $this, 'bs_row_func' ) );
-        add_shortcode( 'span', array( $this, 'bs_span_func' ) );
-        add_shortcode( 'inner-span', array( $this, 'bs_span_func' ) );
-        add_shortcode( 'inner-inner-span', array( $this, 'bs_span_func' ) );
+        add_shortcode( 'col', array( $this, 'bs_span_func' ) );
+        add_shortcode( 'inner-col', array( $this, 'bs_span_func' ) );
+        add_shortcode( 'inner-inner-col', array( $this, 'bs_span_func' ) );
         add_shortcode( 'jumbotron', array( $this, 'bs_hero_func' ) );
         add_shortcode( 'well', array( $this, 'bs_well_func' ) );
         add_shortcode( 'icon', array( $this, 'bs_icon_func' ) );
-        add_shortcode( 'thumbnails', array( $this, 'bs_thumbnails_func' ) );
         add_shortcode( 'thumbnail', array( $this, 'bs_thumbnail_func' ) );
 	    add_shortcode( 'container', array( $this, 'bs_container_func' ) );
 	    add_shortcode( 'lead', array( $this, 'bs_lead_func' ) );
         // Deprecated
         add_shortcode( 'hero', array( $this, 'bs_hero_func' ) );
-        // Run this after the shortcodes so we can do stuff
+	    add_shortcode( 'thumbnails', array( $this, 'bs_thumbnails_func' ) );
+	    add_shortcode( 'span', array( $this, 'bs_span_func' ) );
+	    add_shortcode( 'inner-span', array( $this, 'bs_span_func' ) );
+	    add_shortcode( 'inner-inner-span', array( $this, 'bs_span_func' ) );
+	    // Run this after the shortcodes so we can do stuff
         remove_filter( 'the_content', 'wpautop' );
         add_filter( 'the_content', 'wpautop' , 11 );
         add_filter( 'widget_text', 'do_shortcode' );
@@ -52,7 +55,7 @@ class BootstrapShortcodes {
         return $str;
     }
 
-    /* Collapse: http://twitter.github.com/bootstrap/javascript.html#collapse */
+    /* Collapse: http://getbootstrap.com/javascript/#collapse */
 
     /* [collapse title=null element="h2" open=false][/collapse] */
 
@@ -80,7 +83,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Tabs: http://twitter.github.com/bootstrap/javascript.html#tabs */
+    /* Tabs: http://getbootstrap.com/javascript/#tabs */
 
     /* [tabs class=null][/tabs] */
 
@@ -105,7 +108,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Tab: http://twitter.github.com/bootstrap/javascript.html#tabs */
+    /* Tab: http://getbootstrap.com/javascript/#tabs */
 
     /* [tab title="default" active=false class=null icon=null element=null] */
 
@@ -158,7 +161,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Tab Content Group: http://twitter.github.com/bootstrap/javascript.html#tabs */
+    /* Tab Content Group: http://getbootstrap.com/javascript/#tabs */
 
     /* [tabcontent-group][/tabcontent-group] */
 
@@ -170,7 +173,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Tab Content: http://twitter.github.com/bootstrap/javascript.html#tabs */
+    /* Tab Content: http://getbootstrap.com/javascript/#tabs */
 
     /* [tabcontent title=null class=null active=false fade=false][/tabcontent] */
 
@@ -206,7 +209,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Buttons: http://twitter.github.com/bootstrap/base-css.html#buttons */
+    /* Buttons: http://getbootstrap.com/css/#buttons */
 
     /* [button text=null link=null style=null size=null icon=null iconwhite=false class=null newwindow=false] */
 
@@ -265,7 +268,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Button Group: http://twitter.github.com/bootstrap/components.html#buttonGroups */
+    /* Button Group: http://getbootstrap.com/components/#btn-groups */
 
     /* [btngroup class=null][/btngroup] */
 
@@ -290,7 +293,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Row: http://twitter.github.com/bootstrap/scaffolding.html */
+    /* Row: http://getbootstrap.com/css/#grid */
 
     /* [row class=null rowid=null] */
 
@@ -320,9 +323,9 @@ class BootstrapShortcodes {
 
     }
 
-    /* Span: http://twitter.github.com/bootstrap/scaffolding.html */
+    /* Col: http://getbootstrap.com/css/#grid */
 
-    /* [span width=12 offset=0 class=null spanid=null] */
+    /* [col width=12 offset=0 class=null spanid=null] */
 
     public function bs_span_func($atts, $content = null) {
 
@@ -354,7 +357,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Hero: http://twitter.github.com/bootstrap/components.html#typography */
+    /* Jumbotron: http://getbootstrap.com/components/#jumbotron */
 
     /* [jumbotron][/jumbotron] */
 
@@ -379,7 +382,7 @@ class BootstrapShortcodes {
 
     }
 
-    /* Well: http://twitter.github.com/bootstrap/components.html#misc */
+    /* Well: http://getbootstrap.com/components/#wells */
 
     /* [well size=null class=null][/well] */
 
@@ -433,19 +436,15 @@ class BootstrapShortcodes {
 
     }
 
-    /* Thumbnails: http://twitter.github.com/bootstrap/components.html#thumbnails */
-
-    /* [thumbnails][/thumbnails] */
+    /* There's no reason for a thumbnail wrapper now. */
 
     public function bs_thumbnails_func($atts, $content = null) {
 
-        $thumbnails_content = "<ul class='thumbnails'>" . do_shortcode($content) . "</ul>";
-
-        return $thumbnails_content;
+        return do_shortcode($content);
 
     }
 
-    /* Thumbnail: http://twitter.github.com/bootstrap/components.html#thumbnails */
+    /* Thumbnail: http://getbootstrap.com/components/#thumbnails */
 
     /* [thumbnail size=4 src=null title=null content=null class=null][/thumbnail] */
 
@@ -464,17 +463,13 @@ class BootstrapShortcodes {
         );
 
         $thumbnail_content = '
-        <li class="col-md-' . $size . ' ' . $class . '">
-            <div class="img-thumbnail">
-                <h4>' . $title . '</h4><img src="' . $src. '" alt="' . $title . '">' . do_shortcode($content) . '
-            </div>
-        </li>';
+        <div class="col-md-' . $size . ' ' . $class . '"><div class="thumbnail"><img src="' . $src. '" alt="' . $title . '"><div class="caption"><h3>' . $title . '</h3>' . do_shortcode($content) . '</div></div></div>';
 
         return $thumbnail_content;
 
     }
 
-	/* Container */
+	/* Container: http://getbootstrap.com/css/#overview-container */
 
 	/* [container][/container] */
 
