@@ -513,7 +513,7 @@ class BootstrapShortcodes {
             $class = " " . $class;
         }
 
-        $lead_content = "<div class='lead" . $class . "'>" . do_shortcode($content) . "</div>";
+        $lead_content = "<span class='lead" . $class . "'>" . do_shortcode($content) . "</span>";
 
         return $lead_content;
 
