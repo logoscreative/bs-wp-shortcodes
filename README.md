@@ -49,6 +49,10 @@ General documentation can be found in the [Bootstrap Docs](http://getbootstrap.c
 
 <code>[jumbotron][/jumbotron]</code>
 
+### Lead ###
+
+<code>[lead][/lead]</code>
+
 ### Well ###
 
 ```[well size=null class=null][/well]```
