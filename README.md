@@ -13,9 +13,9 @@ General documentation can be found in the [Bootstrap Docs](http://getbootstrap.c
 
 ### Col ###
 
-```[col width=12 offset=0 class=null spanid=null][/span]```
-```[inner-col width=12 offset=0 class=null spanid=null][/span]```
-```[inner-inner-col width=12 offset=0 class=null spanid=null][/span]```
+```[col width=12 offset=0 class=null spanid=null][/col]```
+```[inner-col width=12 offset=0 class=null spanid=null][/col]```
+```[inner-inner-col width=12 offset=0 class=null spanid=null][/col]```
 
 ### Container ###
 ```[container class=null fluid=false][/container]```
