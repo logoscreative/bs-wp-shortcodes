@@ -17,6 +17,9 @@ General documentation can be found in the [Bootstrap Docs](http://getbootstrap.c
 ```[inner-col width=12 offset=0 class=null spanid=null][/span]```
 ```[inner-inner-col width=12 offset=0 class=null spanid=null][/span]```
 
+### Container ###
+```[container class=null fluid=false][/container]```
+
 ### Collapse ###
 
 ```[collapse title=null element="h2" open=false plusicon=true][/collapse]```

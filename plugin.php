@@ -471,24 +471,29 @@ class BootstrapShortcodes {
 
 	/* Container: http://getbootstrap.com/css/#overview-container */
 
-	/* [container][/container] */
+	/* [container class=null fluid=false][/container] */
 
 	public function bs_container_func($atts, $content = null) {
 
 		extract(
 			shortcode_atts(
 				array(
-					'class' => ''
+					'class' => '',
+					'fluid' => false
 				),
 				$atts
 			)
 		);
 
-		if ( $class !== '' ) {
-			$class = " " . $class;
+		if ( $fluid === true ) {
+			$divclass = "-fluid";
 		}
 
-		$container_content = "<div class='container" . $class . "'>" . do_shortcode($content) . "</div>";
+		if ( $class !== '' ) {
+			$divclass = " " . $class;
+		}
+
+		$container_content = "<div class='container" . $divclass . "'>" . do_shortcode($content) . "</div>";
 
 		return $container_content;
 
