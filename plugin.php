@@ -25,6 +25,7 @@ class BootstrapShortcodes {
         add_shortcode( 'btngroup', array( $this, 'bs_btngrp_func' ) );
         add_shortcode( 'row', array( $this, 'bs_row_func' ) );
         add_shortcode( 'inner-row', array( $this, 'bs_row_func' ) );
+	    add_shortcode( 'inner-inner-row', array( $this, 'bs_row_func' ) );
         add_shortcode( 'col', array( $this, 'bs_span_func' ) );
         add_shortcode( 'inner-col', array( $this, 'bs_span_func' ) );
         add_shortcode( 'inner-inner-col', array( $this, 'bs_span_func' ) );

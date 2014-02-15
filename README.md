@@ -10,6 +10,7 @@ General documentation can be found in the [Bootstrap Docs](http://getbootstrap.c
 
 ```[row class=null rowid=null][/row]```
 ```[inner-row class=null rowid=null][/row]```
+```[inner-inner-row class=null rowid=null][/row]```
 
 ### Col ###
 
