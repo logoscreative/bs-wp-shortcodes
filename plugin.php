@@ -488,6 +488,8 @@ class BootstrapShortcodes {
 
 		if ( $fluid === true ) {
 			$divclass = "-fluid";
+		} else {
+			$divclass = "";
 		}
 
 		if ( $class !== '' ) {
